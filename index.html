@@ -1,66 +1,90 @@
-<!Doctype html><html>
+<!Doctype html>
+<html>
 <head>
-<style>
-* {
-  box-sizing: border-box;
-}
+  <style>
+    /* Define the breakpoints for desktop, tablet and mobile views */
+    @media (min-width: 992px) {
+      .section {
+        width: 33.33%; /* Each section takes up one third of the row */
+        float: left; /* Align the sections horizontally */
+      }
+    }
 
-section {
-  border: 1px solid black;
-  padding: 20px;
-  margin: 10px;
-}
+    @media (min-width: 768px) and (max-width: 991px) {
+      .section {
+        width: 50%; /* Each section takes up half of the row */
+        float: left; /* Align the sections horizontally */
+      }
+      .section:nth-child(3) {
+        clear: both; /* Move the third section to a new row */
+      }
+    }
 
-.title {
-  border: 1px solid black;
-  background-color: yellow;
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 10px;
-}
+    @media (max-width: 767px) {
+      .section {
+        width: 100%; /* Each section takes up the whole row */
+      }
+    }
 
-@media (min-width: 992px) {
-  section {
-    width: calc(100% / 3 - 20px);
-    float: left;
-  }
-}
+    /* Define the common styles for the sections and the section titles */
+    .section {
+      border: 1px solid black; /* Set a black border */
+      margin: 10px; /* Add some spacing between the sections */
+      padding: 10px; /* Add some spacing between the content and the border */
+      box-sizing: border-box; /* Include the padding and border in the width calculation */
+    }
 
-@media (min-width: 768px) and (max-width: 991px) {
-  section {
-    width: calc(50% - 20px);
-    float: left;
-  }
-  section:nth-child(3) {
-    width: 100%;
-    clear: both;
-  }
-}
+    .section-title {
+      border: 1px solid black; /* Set a black border */
+      position: absolute; /* Position the title at the top right corner */
+      top: 0;
+      right: 0;
+      padding: 5px; /* Add some spacing between the text and the border */
+      margin: 10px; /* Add some spacing between the title and the section */
+    }
 
-@media (max-width: 767px) {
-  section {
-    width: 100%;
-    clear: both;
-  }
-}
-</style>
+    /* Define the background colors for the sections and the section titles */
+    .section:nth-child(1) {
+      background-color: lightblue; /* Set a light blue background for the first section */
+    }
+
+    .section:nth-child(1) .section-title {
+      background-color: yellow; /* Set a yellow background for the first section title */
+    }
+
+    .section:nth-child(2) {
+      background-color: lightgreen; /* Set a light green background for the second section */
+    }
+
+    .section:nth-child(2) .section-title {
+      background-color: orange; /* Set an orange background for the second section title */
+    }
+
+    .section:nth-child(3) {
+      background-color: pink; /* Set a pink background for the third section */
+    }
+
+    .section:nth-child(3) .section-title {
+      background-color: purple; /* Set a purple background for the third section title */
+    }
+  </style>
 </head>
 <body>
-<h1>My Page</h1>
-<section>
-  <div class="title">Chicken</div>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo quis lorem aliquet aliquam. Morbi vitae nisl quis augue tincidunt sagittis. Vivamus id lacus quis nisi tincidunt luctus. Donec vitae felis ut magna mattis ullamcorper.</p>
-</section>
-<section>
-  <div class="title">Beef</div>
-  <p>Nulla facilisi. Phasellus vitae leo quis mi tincidunt ultrices. In hac habitasse platea dictumst. Fusce quis augue vitae arcu malesuada consequat. Mauris sit amet lacus quis erat malesuada aliquet.</p>
-</section>
-<section>
-  <div class="title">Sushi</div>
-  <p>Etiam quis nisi quis lorem lacinia sollicitudin. Curabitur quis nisl quis lorem tincidunt tincidunt. Sed quis semper justo. Pellentesque quis leo quis lorem tincidunt tincidunt. Suspendisse potenti.</p>
-</section>
+  <h1>Our Menu</h1>
+  <div class="section">
+    <div class="section-title">Chicken</div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo quis lorem aliquet fringilla. Morbi vitae lacus quis nisi tincidunt tincidunt. Fusce quis nisl vel eros sagittis malesuada.</p>
+  </div>
+  <div class="section">
+    <div class="section-title">Beef</div>
+    <p>Nulla facilisi. Quisque quis nunc et augue luctus consequat. Suspendisse potenti. Mauris id leo vitae augue sollicitudin ullamcorper. Curabitur quis nisi quis lorem vulputate consectetur.</p>
+  </div>
+  <div class="section">
+    <div class="section-title">Sushi</div>
+    <p>Etiam euismod sem ut neque ultrices, quis consequat nisl malesuada. Vivamus ac semper sapien. Donec quis nisi quis magna fermentum ultrices. Phasellus quis nunc quis lorem blandit rutrum.</p>
+  </div>
 </body>
 </html>
+```
 
 
